@@ -1,6 +1,6 @@
 {
   "name": "meteor-cleaner",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Clean up your Meteor installation",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,7 @@
   "author": "Christian Klausser",
   "license": "MIT",
   "dependencies": {
-    "minimist": "^1.2.0",
-    "semver": "^5.3.0"
+    "meteor-version-parser": "^1.0.1"
   },
   "devDependencies": {
     "jest": "^20.0.4"
