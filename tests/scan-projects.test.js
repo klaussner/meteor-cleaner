@@ -1,6 +1,6 @@
 const {
   parseRelease, parseVersions
-} = require('../lib/analyze-projects.js');
+} = require('../lib/scan-projects.js');
 
 const versionsList =
 `allow-deny@1.0.5
