@@ -16,7 +16,7 @@ program
   )
 
   // Additional options
-  .option('-f, --force', "don't ask for confirmation")
+  .option('-y, --yes', "don't ask for confirmation")
   .parse(process.argv);
 
 run(program);
