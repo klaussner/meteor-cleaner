@@ -1,3 +1,5 @@
+'use strict';
+
 const eliminateVersions = require('../lib/eliminate-versions.js');
 
 const packages = {

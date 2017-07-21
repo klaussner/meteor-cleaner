@@ -1,3 +1,5 @@
+'use strict';
+
 const directorySize = require('../lib/directory-size.js');
 
 describe('Directory size', () => {

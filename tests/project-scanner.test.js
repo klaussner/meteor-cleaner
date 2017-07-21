@@ -1,6 +1,9 @@
-const {
-  parseRelease, parseVersions
-} = require('../lib/scan-projects.js');
+'use strict';
+
+const
+  scanner = require('../lib/project-scanner.js'),
+  parseRelease = scanner.parseRelease,
+  parseVersions = scanner.parseVersions;
 
 const versionsList =
 `allow-deny@1.0.5
