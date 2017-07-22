@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test-and-watch": "jest --watch"
+    "test-and-watch": "jest --watch",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "meteor-version-parser": "^1.0.1"
   },
   "devDependencies": {
+    "eslint": "^4.3.0",
     "jest": "^20.0.4"
   }
 }

@@ -30,7 +30,7 @@ describe('Eliminate versions', () => {
     ]);
   });
 
-  test('Keep scanned versions', () => {
+  test('Keep scanned versions', () => {
     const remove = eliminateVersions(packages, {
       keepScanned: scanned
     });
