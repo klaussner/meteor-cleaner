@@ -20,7 +20,7 @@ const scanned = {
 };
 
 describe('Eliminate versions', () => {
-  test('Keep only the latest versions', () => {
+  test('Keep the latest versions', () => {
     const remove = eliminateVersions(packages, {
       keepLatest: 2
     });

@@ -6,10 +6,10 @@ const
   parseVersions = scanner.parseVersions;
 
 const versionsList =
-`allow-deny@1.0.5
-autoupdate@1.3.12`;
+`banana@1.2.3
+mango@2.4.6`;
 
-describe('Analyze projects', () => {
+describe('Project scanner', () => {
   test('Parse Meteor release', () => {
     // Regular version
     expect(parseRelease('METEOR@2.4.6')).toEqual({
@@ -45,20 +45,20 @@ describe('Analyze projects', () => {
 
   test('Parse and merge package versions', () => {
     const packages = parseVersions(versionsList, {
-      'babel-compiler': {
-        '6.19.1': true
+      'papaya': {
+        '6.12.18': true
       }
     });
 
     expect(packages).toEqual({
-      'allow-deny': {
-        '1.0.5': true
+      'banana': {
+        '1.2.3': true
       },
-      'autoupdate': {
-        '1.3.12': true
+      'mango': {
+        '2.4.6': true
       },
-      'babel-compiler': {
-        '6.19.1': true
+      'papaya': {
+        '6.12.18': true
       }
     });
   });
