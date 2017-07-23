@@ -62,4 +62,23 @@ describe('Project scanner', () => {
       }
     });
   });
+
+  test('Scan projects', () => {
+    const rootPath = './tests/fixtures/project-scanner';
+    const packages = scanner.scanProjects(rootPath);
+
+    expect(packages).toEqual({
+      'meteor-tool': {
+        '2.4.6': true,
+        '2.4.6-8-beta.10': true
+      },
+      'banana': {
+        '1.2.3': true
+      },
+      'mango': {
+        '2.4.6': true,
+        '4.8.12': true
+      }
+    });
+  });
 });
