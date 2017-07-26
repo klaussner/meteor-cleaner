@@ -1,8 +1,9 @@
 const program = require('commander');
 const run = require('./lib/run.js');
+const tool = require('./package.json');
 
 program
-  .version('1.0.0')
+  .version(tool.version)
 
   // Cleaning modes
   .option(
