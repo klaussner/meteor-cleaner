@@ -8,7 +8,9 @@ const analyzePackages = require('../lib/analyze-packages.js');
 
 describe('Analyze packages', () => {
   test('Analyze packages', () => {
-    const packages = analyzePackages(true).packages;
+    const packages = analyzePackages({
+      noCache: true
+    }).packages;
 
     const bananaVersions = expect.arrayContaining([
       expect.objectContaining({

@@ -17,6 +17,8 @@ program
 
   // Additional options
   .option('-y, --yes', "don't ask for confirmation")
+  .option('--ignore-cache', "ignore the analysis cache")
+
   .parse(process.argv);
 
 run(program);
