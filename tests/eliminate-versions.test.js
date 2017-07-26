@@ -3,8 +3,8 @@
 const eliminateVersions = require('../lib/eliminate-versions.js');
 
 const packages = {
-  pkg1: {
-    name: 'pkg1',
+  banana: {
+    name: 'banana',
     versions: [
       { version: '1.2.3-alpha.4' },
       { version: '2.0' },
@@ -14,7 +14,7 @@ const packages = {
 };
 
 const scanned = {
-  'pkg1': {
+  'banana': {
     '2.0': true
   }
 };
