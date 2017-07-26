@@ -15,6 +15,10 @@ program
     '-s, --keep-scanned <path>',
     'keep all versions used by Meteor projects in <path>'
   )
+  .option(
+    '-f, --keep-final',
+    'keep final releases (no pre-releases)'
+  )
 
   // Additional options
   .option('-y, --yes', "don't ask for confirmation")
