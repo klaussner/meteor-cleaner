@@ -11,10 +11,16 @@ mango@2.4.6`;
 
 describe('Project scanner', () => {
   test('Parse Meteor release', () => {
-    // Regular version
+    // Regular versions
     expect(parseRelease('METEOR@2.4.6')).toEqual({
       'meteor-tool': {
         '2.4.6': true
+      }
+    });
+
+    expect(parseRelease('METEOR@2.4')).toEqual({
+      'meteor-tool': {
+        '2.4.0': true
       }
     });
 
