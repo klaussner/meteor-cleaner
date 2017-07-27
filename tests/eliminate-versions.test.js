@@ -6,7 +6,10 @@ const packages = {
   banana: {
     name: 'banana',
     versions: [
-      { version: '1.2.3-alpha.4' },
+      {
+        version: '1.2.3-alpha.4',
+        isPreRelease: true
+      },
       { version: '2.0' },
       { version: '42.13.0' }
     ]
@@ -20,24 +23,38 @@ const scanned = {
 };
 
 describe('Eliminate versions', () => {
-  test('Keep the latest versions', () => {
-    const remove = eliminateVersions(packages, {
-      keepLatest: 2
+  const bananaPreRelease = expect.objectContaining({
+    version: '1.2.3-alpha.4'
+  });
+
+  test('Keep latest versions', () => {
+    const toRemove = eliminateVersions(packages, {
+      latest: 2
     });
 
-    expect(remove).toEqual([
-      { version: '1.2.3-alpha.4' }
+    expect(toRemove).toEqual([
+      bananaPreRelease
     ]);
   });
 
   test('Keep scanned versions', () => {
-    const remove = eliminateVersions(packages, {
-      keepScanned: scanned
+    const toRemove = eliminateVersions(packages, {
+      scanned
     });
 
-    expect(remove).toEqual([
-      { version: '1.2.3-alpha.4' },
+    expect(toRemove).toEqual([
+      bananaPreRelease,
       { version: '42.13.0' }
+    ]);
+  });
+
+  test('Keep final versions', () => {
+    const toRemove = eliminateVersions(packages, {
+      final: true
+    });
+
+    expect(toRemove).toEqual([
+      bananaPreRelease
     ]);
   });
 });
