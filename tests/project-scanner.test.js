@@ -1,9 +1,8 @@
 'use strict';
 
-const
-  scanner = require('../lib/project-scanner.js'),
-  parseRelease = scanner.parseRelease,
-  parseVersions = scanner.parseVersions;
+const scanner = require('../lib/project-scanner.js');
+const parseRelease = scanner.parseRelease;
+const parseVersions = scanner.parseVersions;
 
 const versionsList =
 `banana@1.2.3
