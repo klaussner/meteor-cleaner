@@ -1,7 +1,7 @@
 {
   "name": "meteor-cleaner",
   "version": "1.0.0",
-  "description": "Clean up your Meteor installation",
+  "description": "Clean up your Meteor package cache!",
   "main": "index.js",
   "scripts": {
     "test": "jest",
