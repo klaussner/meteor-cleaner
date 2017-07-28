@@ -2,6 +2,18 @@ const program = require('commander');
 const run = require('./lib/run.js');
 const tool = require('./package.json');
 
+// Check for updates.
+const notifier = require('update-notifier')({
+  pkg: tool
+});
+
+if (notifier.update) {
+  const chalk = require('chalk');
+  const version = notifier.update.latest;
+
+  console.log(chalk`{bold.yellow Update available: ${version}}`);
+}
+
 program
   .version(tool.version)
 
