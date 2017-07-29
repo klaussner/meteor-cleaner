@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const program = require('commander');
@@ -17,6 +19,7 @@ if (notifier.update) {
 }
 
 program
+  .command('clean-package-cache')
   .version(tool.version)
 
   // Cleaning modes

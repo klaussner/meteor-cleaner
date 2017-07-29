@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Clean up your Meteor package cache!",
   "main": "index.js",
+  "bin": {
+    "clean-package-cache": "index.js"
+  },
   "scripts": {
     "test": "jest",
     "test-and-watch": "jest --watch",
