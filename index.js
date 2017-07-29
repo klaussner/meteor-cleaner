@@ -1,3 +1,5 @@
+'use strict';
+
 const program = require('commander');
 const run = require('./lib/run.js');
 const tool = require('./package.json');

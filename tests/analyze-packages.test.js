@@ -1,3 +1,5 @@
+'use strict';
+
 jest.mock('../lib/paths.js', () => {
   return {
     packages: './tests/fixtures/analyze-packages'

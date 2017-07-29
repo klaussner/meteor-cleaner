@@ -1,3 +1,5 @@
+'use strict';
+
 const formatBytes = require('../lib/text.js').formatBytes;
 
 describe('Text formatting', () => {
