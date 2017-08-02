@@ -2,7 +2,7 @@
 
 'use strict';
 
-const program = require('commander');
+const Command = require('commander').Command;
 const run = require('./lib/run.js');
 const tool = require('./package.json');
 
@@ -18,8 +18,9 @@ if (notifier.update) {
   console.log(chalk`{bold.yellow Update available: ${version}}`);
 }
 
+const program = new Command('clean-package-cache');
+
 program
-  .command('clean-package-cache')
   .version(tool.version)
 
   // Cleaning modes
