@@ -2,6 +2,8 @@
 
 Clean up your Meteor package cache!
 
+[![Build Status](https://travis-ci.org/klaussner/meteor-cleaner.svg?branch=master)](https://travis-ci.org/klaussner/meteor-cleaner)
+
 ![`meteor-cleaner`](screenshot.png)
 
 ## Installation
