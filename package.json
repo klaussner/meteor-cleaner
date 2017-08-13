@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest",
-    "test-and-watch": "jest --watch",
+    "test:watch": "jest --watch",
     "lint": "eslint ."
   },
   "repository": {
