@@ -16,6 +16,10 @@ const packages = {
   }
 };
 
+const packagesData = {
+  packages
+};
+
 const scanned = {
   'banana': {
     '2.0': true
@@ -28,7 +32,7 @@ describe('Eliminate versions', () => {
   });
 
   test('Keep latest versions', () => {
-    const toRemove = eliminateVersions(packages, {
+    const toRemove = eliminateVersions(packagesData, {
       latest: 2
     });
 
@@ -38,7 +42,7 @@ describe('Eliminate versions', () => {
   });
 
   test('Keep scanned versions', () => {
-    const toRemove = eliminateVersions(packages, {
+    const toRemove = eliminateVersions(packagesData, {
       scanned
     });
 
@@ -49,12 +53,25 @@ describe('Eliminate versions', () => {
   });
 
   test('Keep final versions', () => {
-    const toRemove = eliminateVersions(packages, {
+    const toRemove = eliminateVersions(packagesData, {
       final: true
     });
 
     expect(toRemove).toEqual([
       bananaPreRelease
     ]);
+  });
+
+  test('Keep currently used `meteor-tool` version', () => {
+    const toRemove = eliminateVersions({
+      packages: {
+        'meteor-tool': {
+          versions: [{ version: '2.4.6' }]
+        }
+      },
+      toolVersion: '2.4.6'
+    }, {});
+
+    expect(toRemove).toEqual([]);
   });
 });

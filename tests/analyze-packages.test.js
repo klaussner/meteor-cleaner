@@ -1,8 +1,11 @@
 'use strict';
 
 jest.mock('../lib/paths.js', () => {
+  const rootPath = './tests/fixtures/analyze-packages';
+
   return {
-    packages: './tests/fixtures/analyze-packages'
+    meteor: `${rootPath}/meteor-binary`,
+    packages: rootPath
   };
 });
 
@@ -10,9 +13,9 @@ const analyzePackages = require('../lib/analyze-packages.js');
 
 describe('Analyze packages', () => {
   test('Analyze packages', () => {
-    const packages = analyzePackages({
+    const packagesData = analyzePackages({
       noCache: true
-    }).packages;
+    });
 
     const bananaVersions = expect.arrayContaining([
       expect.objectContaining({
@@ -29,7 +32,7 @@ describe('Analyze packages', () => {
       })
     ]);
 
-    expect(packages).toMatchObject({
+    expect(packagesData.packages).toMatchObject({
       'banana': {
         name: 'banana',
         versions: bananaVersions
@@ -39,5 +42,7 @@ describe('Analyze packages', () => {
         versions: mangoVersions
       }
     });
+
+    expect(packagesData.toolVersion).toEqual('2.4.6');
   });
 });
