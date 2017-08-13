@@ -14,6 +14,8 @@ Clean up your Meteor package cache!
 
 If you install `meteor-cleaner` globally using the `npm` version bundled with Meteor, you can run the `clean-package-cache` command like a built-in Meteor command.
 
+**Note: Windows is currently not supported!**
+
 ## Usage
 
 ```sh

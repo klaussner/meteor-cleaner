@@ -1,11 +1,14 @@
 {
   "name": "meteor-cleaner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clean up your Meteor package cache!",
   "main": "index.js",
   "bin": {
     "clean-package-cache": "index.js"
   },
+  "os": [
+    "!win32"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
